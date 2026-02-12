@@ -1,86 +1,59 @@
-[
-  { "pattern": "\\banda\\b", "replace": "kalian" },
-  { "pattern": "\\bsaya\\b", "replace": "aku" },
-  { "pattern": "\\bkamu\\b", "replace": "kamu" },
-  { "pattern": "\\btidak\\b", "replace": "nggak" },
-  { "pattern": "\\bga\\b", "replace": "nggak" },
-  { "pattern": "\\bmengapa\\b", "replace": "kenapa" },
-  { "pattern": "\\bbagaimana\\b", "replace": "gimana" },
-  { "pattern": "\\bapakah\\b", "replace": "apa" },
-  { "pattern": "\\bakan\\b", "replace": "bakal" },
-  { "pattern": "\\bingin\\b", "replace": "pengen" },
 
-  { "pattern": "\\bsangat\\b", "replace": "banget" },
-  { "pattern": "\\bsekali\\b", "replace": "banget" },
-  { "pattern": "\\bmelihat\\b", "replace": "ngeliat" },
-  { "pattern": "\\bmendengar\\b", "replace": "denger" },
-  { "pattern": "\\bberbicara\\b", "replace": "ngomong" },
-  { "pattern": "\\bberkata\\b", "replace": "bilang" },
-  { "pattern": "\\bmemahami\\b", "replace": "paham" },
-  { "pattern": "\\bmenjelaskan\\b", "replace": "jelasin" },
+{
+  "replace": [
+    { "pattern": "\\banda\\b", "replacement": "kalian" },
+    { "pattern": "\\bsaya\\b", "replacement": "aku" },
+    { "pattern": "\\btidak\\b", "replacement": "nggak" },
+    { "pattern": "\\bmengapa\\b", "replacement": "kenapa" },
+    { "pattern": "\\bbagaimana\\b", "replacement": "gimana" },
+    { "pattern": "\\bsangat\\b", "replacement": "banget" },
+    { "pattern": "\\bsulit\\b", "replacement": "ribet" },
+    { "pattern": "\\bmudah\\b", "replacement": "gampang" },
+    { "pattern": "\\bmemahami\\b", "replacement": "ngerti" },
+    { "pattern": "\\bmenjelaskan\\b", "replacement": "jelasin" },
+    { "pattern": "\\bmengerjakan\\b", "replacement": "ngerjain" }
+  ],
 
-  { "pattern": "\\bmencoba\\b", "replace": "nyoba" },
-  { "pattern": "\\bberusaha\\b", "replace": "nyoba" },
-  { "pattern": "\\bmenunggu\\b", "replace": "nunggu" },
-  { "pattern": "\\bmemikirkan\\b", "replace": "mikirin" },
-  { "pattern": "\\bmerasa\\b", "replace": "ngerasa" },
-
-  { "pattern": "\\bselanjutnya\\b", "replace": "terus" },
-  { "pattern": "\\bkemudian\\b", "replace": "terus" },
-  { "pattern": "\\bnanti\\b", "replace": "nanti" },
-  { "pattern": "\\bcontohnya\\b", "replace": "misalnya" },
-
-  { "pattern": "\\bpenting\\b", "replace": "penting banget" },
-  { "pattern": "\\bperlu\\b", "replace": "perlu banget" },
-  { "pattern": "\\bsulit\\b", "replace": "ribet" },
-  { "pattern": "\\bmudah\\b", "replace": "gampang" },
-
-  { "pattern": "\\blelah\\b", "replace": "capek" },
-  { "pattern": "\\bsenang\\b", "replace": "seneng" },
-  { "pattern": "\\bsedih\\b", "replace": "sedih banget" },
-  { "pattern": "\\bmarah\\b", "replace": "kesel" },
-
-  { "pattern": "\\bcepat\\b", "replace": "cepet" },
-  { "pattern": "\\blambat\\b", "replace": "lelet" },
-
-  { "pattern": "\\bterima kasih\\b", "replace": "makasih" },
-  { "pattern": "\\bmaaf\\b", "replace": "maaf ya" },
-
-  { "pattern": "\\bbelajar\\b", "replace": "belajar" },
-  { "pattern": "\\bmembaca\\b", "replace": "baca" },
-  { "pattern": "\\bmenulis\\b", "replace": "nulis" },
-  { "pattern": "\\bmengerjakan\\b", "replace": "ngerjain" },
-
-  { "pattern": "\\bmenjawab\\b", "replace": "jawab" },
-  { "pattern": "\\bbertanya\\b", "replace": "nanya" },
-  { "pattern": "\\bberdiskusi\\b", "replace": "diskusi" },
-
-  { "pattern": "\\bberhasil\\b", "replace": "sukses" },
-  { "pattern": "\\bgagal\\b", "replace": "gagal" },
-  { "pattern": "\\bmungkin\\b", "replace": "kayaknya" },
-  { "pattern": "\\bpasti\\b", "replace": "fix" },
-
-  {"pattern": "\\bmelakukan\\b", "replace": "ngelakuin"},
-  {"pattern": "\\bmelakukan\\b", "replace": "lakuin"},
-  {"pattern": "\\bmemperhatikan\\b", "replace": "merhatiin"},
-  {"pattern": "\\bmemperhatikan\\b", "replace": "perhatiin"},
-  {"pattern": "\\bmenyelesaikan\\b", "replace": "nyelesain"},
-  {"pattern": "\\bmenyelesaikan\\b", "replace": "selesain"},
-
-  {"pattern": "\\bmemperbaiki\\b", "replace": "benerin"},
-  {"pattern": "\\bmemperbaiki\\b","replace": "perbaikin"},
-  {"pattern": "\\bmempelajari\\b","replace": "pelajarin"},
-  {"pattern": "\\bmempelajari\\b", "replace": "pelajariin"},
-  {"pattern": "\\bmengingat\\b", "replace": "nginget"},
-  {"pattern": "\\bmengingat\\b", "replace": "inget"},
-
-  {"pattern": "\\bmemahami\\b", "replace": "paham"},
-  {"pattern": "\\bmemahami\\b", "replace": "ngerti"},
-  {"pattern": "\\bmembandingkan\\b", "replace": "bandingin"},
-  {"pattern": "\\bmembandingkan\\b", "replace": "bandingkan"},
-  
-  {"pattern": "\\bmenyusun\\b", "replace": "nyusun"},
-  {"pattern": "\\bmenyusun\\b", "replace": "susun"},
-  {"pattern": "\\bmenyampaikan\\b", "replace": "nyampein"},
-  {"pattern": "\\bmenyampaikan\\b", "replace": "sampaiin"}
-]
+  "tooltip": [
+    {
+      "pattern": "\\bfotosintesis\\b",
+      "explanation": "proses tumbuhan membuat makanan dengan bantuan cahaya matahari"
+    },
+    {
+      "pattern": "\\bmitokondria\\b",
+      "explanation": "bagian sel yang menghasilkan energi"
+    },
+    {
+      "pattern": "\\bdemokrasi\\b",
+      "explanation": "sistem pemerintahan di mana rakyat memiliki kekuasaan tertinggi"
+    },
+    {
+      "pattern": "\\binflasi\\b",
+      "explanation": "kenaikan harga barang secara umum dan terus-menerus"
+    },
+    {
+      "pattern": "\\bkonstitusi\\b",
+      "explanation": "aturan dasar atau undang-undang dasar suatu negara"
+    },
+    {
+      "pattern": "\\benergi kinetik\\b",
+      "explanation": "energi yang dimiliki benda karena bergerak"
+    },
+    {
+      "pattern": "\\benergi potensial\\b",
+      "explanation": "energi yang tersimpan karena posisi atau keadaan benda"
+    },
+    {
+      "pattern": "\\brevolusi\\b",
+      "explanation": "perubahan besar yang terjadi dalam waktu lama"
+    },
+    {
+      "pattern": "\\bmajas\\b",
+      "explanation": "gaya bahasa untuk memperindah kalimat"
+    },
+    {
+      "pattern": "\\bpersuasi\\b",
+      "explanation": "kalimat yang bertujuan membujuk"
+    }
+  ]
+}

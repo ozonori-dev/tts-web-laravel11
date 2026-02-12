@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
         <title>Text to Speech - Gemini AI</title>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
@@ -79,7 +80,7 @@
                         </div>
 
                         <div id="processedText" class="hidden">
-                            <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                            <div class="bg-blue-50 rounded-lg p-4 border border-blue-200 relative overflow-visible">
                                 <p class="text-sm font-medium text-blue-900 mb-2">Processed Text:</p>
                                 <p id="processedTextContent" class="text-sm text-blue-800"></p>
                             </div>
@@ -152,7 +153,7 @@
                         // content.textContent = data.processed_text;
                         exportBtn.disabled = false;
                         
-                        processedTextContent.textContent = data.processed_text;
+                        processedTextContent.innerHTML = data.processed_text;
                         processedTextDiv.classList.remove('hidden');
                         
                         showAlert('Audio generated successfully!', 'success');
