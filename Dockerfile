@@ -1,17 +1,18 @@
-FROM php:8.3-cli
+FROM php:8.4-cli
 
 WORKDIR /var/www
 
-# Install dependencies
-RUN apt-get update \
-    && apt-get install -y \
-        git \
-        unzip \
-        curl \
-        zip \
-        sqlite3 \
-        libzip-dev \
-    && docker-php-ext-install zip pdo pdo_sqlite \
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    curl \
+    zip \
+    sqlite3 \
+    libsqlite3-dev \
+    libzip-dev \
+    pkg-config \
+    && docker-php-ext-install pdo pdo_sqlite zip \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
@@ -20,10 +21,10 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 # Copy project
 COPY . .
 
-# Install Laravel dependencies
+# Install dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Permission
+# Permissions
 RUN chmod -R 775 storage bootstrap/cache
 
 # Entrypoint
