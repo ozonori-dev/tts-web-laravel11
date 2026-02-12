@@ -1,14 +1,21 @@
 FROM php:8.4-cli
 
-# Install system dependencies
+WORKDIR /var/www
+
+# Install dependencies
 RUN apt-get update && apt-get install -y \
-    git unzip libzip-dev zip curl sqlite3 \
-    && docker-php-ext-install pdo pdo_sqlite zip
+    git \
+    unzip \
+    libzip-dev \
+    zip \
+    curl \
+    sqlite3 \
+    && docker-php-ext-install pdo pdo_sqlite zip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-WORKDIR /app
 
 # Copy project
 COPY . .
