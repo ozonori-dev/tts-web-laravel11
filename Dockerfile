@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     libsqlite3-dev \
     libzip-dev \
     pkg-config \
-    && docker-php-ext-install pdo pdo_sqlite zip \
+    && docker-php-ext-install pdo_sqlite zip \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
@@ -27,7 +27,6 @@ RUN composer install --no-dev --optimize-autoloader
 # Permissions
 RUN chmod -R 775 storage bootstrap/cache
 
-# Entrypoint
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
