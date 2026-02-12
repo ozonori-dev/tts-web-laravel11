@@ -1,3 +1,4 @@
 *
 !public/
 !.gitignore
+!regex_replacements.json

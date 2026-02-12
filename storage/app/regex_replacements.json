@@ -1,0 +1,86 @@
+[
+  { "pattern": "\\banda\\b", "replace": "kalian" },
+  { "pattern": "\\bsaya\\b", "replace": "aku" },
+  { "pattern": "\\bkamu\\b", "replace": "kamu" },
+  { "pattern": "\\btidak\\b", "replace": "nggak" },
+  { "pattern": "\\bga\\b", "replace": "nggak" },
+  { "pattern": "\\bmengapa\\b", "replace": "kenapa" },
+  { "pattern": "\\bbagaimana\\b", "replace": "gimana" },
+  { "pattern": "\\bapakah\\b", "replace": "apa" },
+  { "pattern": "\\bakan\\b", "replace": "bakal" },
+  { "pattern": "\\bingin\\b", "replace": "pengen" },
+
+  { "pattern": "\\bsangat\\b", "replace": "banget" },
+  { "pattern": "\\bsekali\\b", "replace": "banget" },
+  { "pattern": "\\bmelihat\\b", "replace": "ngeliat" },
+  { "pattern": "\\bmendengar\\b", "replace": "denger" },
+  { "pattern": "\\bberbicara\\b", "replace": "ngomong" },
+  { "pattern": "\\bberkata\\b", "replace": "bilang" },
+  { "pattern": "\\bmemahami\\b", "replace": "paham" },
+  { "pattern": "\\bmenjelaskan\\b", "replace": "jelasin" },
+
+  { "pattern": "\\bmencoba\\b", "replace": "nyoba" },
+  { "pattern": "\\bberusaha\\b", "replace": "nyoba" },
+  { "pattern": "\\bmenunggu\\b", "replace": "nunggu" },
+  { "pattern": "\\bmemikirkan\\b", "replace": "mikirin" },
+  { "pattern": "\\bmerasa\\b", "replace": "ngerasa" },
+
+  { "pattern": "\\bselanjutnya\\b", "replace": "terus" },
+  { "pattern": "\\bkemudian\\b", "replace": "terus" },
+  { "pattern": "\\bnanti\\b", "replace": "nanti" },
+  { "pattern": "\\bcontohnya\\b", "replace": "misalnya" },
+
+  { "pattern": "\\bpenting\\b", "replace": "penting banget" },
+  { "pattern": "\\bperlu\\b", "replace": "perlu banget" },
+  { "pattern": "\\bsulit\\b", "replace": "ribet" },
+  { "pattern": "\\bmudah\\b", "replace": "gampang" },
+
+  { "pattern": "\\blelah\\b", "replace": "capek" },
+  { "pattern": "\\bsenang\\b", "replace": "seneng" },
+  { "pattern": "\\bsedih\\b", "replace": "sedih banget" },
+  { "pattern": "\\bmarah\\b", "replace": "kesel" },
+
+  { "pattern": "\\bcepat\\b", "replace": "cepet" },
+  { "pattern": "\\blambat\\b", "replace": "lelet" },
+
+  { "pattern": "\\bterima kasih\\b", "replace": "makasih" },
+  { "pattern": "\\bmaaf\\b", "replace": "maaf ya" },
+
+  { "pattern": "\\bbelajar\\b", "replace": "belajar" },
+  { "pattern": "\\bmembaca\\b", "replace": "baca" },
+  { "pattern": "\\bmenulis\\b", "replace": "nulis" },
+  { "pattern": "\\bmengerjakan\\b", "replace": "ngerjain" },
+
+  { "pattern": "\\bmenjawab\\b", "replace": "jawab" },
+  { "pattern": "\\bbertanya\\b", "replace": "nanya" },
+  { "pattern": "\\bberdiskusi\\b", "replace": "diskusi" },
+
+  { "pattern": "\\bberhasil\\b", "replace": "sukses" },
+  { "pattern": "\\bgagal\\b", "replace": "gagal" },
+  { "pattern": "\\bmungkin\\b", "replace": "kayaknya" },
+  { "pattern": "\\bpasti\\b", "replace": "fix" },
+
+  {"pattern": "\\bmelakukan\\b", "replace": "ngelakuin"},
+  {"pattern": "\\bmelakukan\\b", "replace": "lakuin"},
+  {"pattern": "\\bmemperhatikan\\b", "replace": "merhatiin"},
+  {"pattern": "\\bmemperhatikan\\b", "replace": "perhatiin"},
+  {"pattern": "\\bmenyelesaikan\\b", "replace": "nyelesain"},
+  {"pattern": "\\bmenyelesaikan\\b", "replace": "selesain"},
+
+  {"pattern": "\\bmemperbaiki\\b", "replace": "benerin"},
+  {"pattern": "\\bmemperbaiki\\b","replace": "perbaikin"},
+  {"pattern": "\\bmempelajari\\b","replace": "pelajarin"},
+  {"pattern": "\\bmempelajari\\b", "replace": "pelajariin"},
+  {"pattern": "\\bmengingat\\b", "replace": "nginget"},
+  {"pattern": "\\bmengingat\\b", "replace": "inget"},
+
+  {"pattern": "\\bmemahami\\b", "replace": "paham"},
+  {"pattern": "\\bmemahami\\b", "replace": "ngerti"},
+  {"pattern": "\\bmembandingkan\\b", "replace": "bandingin"},
+  {"pattern": "\\bmembandingkan\\b", "replace": "bandingkan"},
+  
+  {"pattern": "\\bmenyusun\\b", "replace": "nyusun"},
+  {"pattern": "\\bmenyusun\\b", "replace": "susun"},
+  {"pattern": "\\bmenyampaikan\\b", "replace": "nyampein"},
+  {"pattern": "\\bmenyampaikan\\b", "replace": "sampaiin"}
+]
