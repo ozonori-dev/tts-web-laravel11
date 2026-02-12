@@ -1,0 +1,29 @@
+.tooltip-word {
+    position: relative;
+    cursor: help;
+    /* border-bottom: 1px solid #af1e1e; */
+    background-color: #99af1e65; /* Red with 10% opacity */
+}
+
+.tooltip-word::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 0;
+    background: #1e3a8a;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 12px;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: 0.2s ease;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.tooltip-word:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -152,6 +152,35 @@ class TtsController extends Controller
         file_put_contents($wavPath, $header . $pcmData);
     }
 
+    // private function applyRegexReplacements(string $text): string
+    // {
+    //     $path = storage_path('app/regex_replacements.json');
+
+    //     if (!file_exists($path)) {
+    //         return $text;
+    //     }
+
+    //     $rules = json_decode(file_get_contents($path), true);
+
+    //     if (!is_array($rules)) {
+    //         return $text;
+    //     }
+
+    //     foreach ($rules as $rule) {
+    //         if (!isset($rule['pattern'], $rule['replace'])) {
+    //             continue;
+    //         }
+
+    //         $text = preg_replace(
+    //             '/' . $rule['pattern'] . '/i',
+    //             $rule['replace'],
+    //             $text
+    //         );
+    //     }
+
+    //     return $text;
+    // }
+
     private function applyRegexReplacements(string $text): string
     {
         $path = storage_path('app/regex_replacements.json');
@@ -166,20 +195,49 @@ class TtsController extends Controller
             return $text;
         }
 
-        foreach ($rules as $rule) {
-            if (!isset($rule['pattern'], $rule['replace'])) {
-                continue;
-            }
+        // =========================
+        // 1️⃣ Replace biasa
+        // =========================
+        if (isset($rules['replace']) && is_array($rules['replace'])) {
+            foreach ($rules['replace'] as $rule) {
+                if (!isset($rule['pattern'], $rule['replacement'])) {
+                    continue;
+                }
 
-            $text = preg_replace(
-                '/' . $rule['pattern'] . '/i',
-                $rule['replace'],
-                $text
-            );
+                $text = preg_replace(
+                    '/' . $rule['pattern'] . '/i',
+                    $rule['replacement'],
+                    $text
+                );
+            }
+        }
+
+        // =========================
+        // 2️⃣ Tooltip istilah ilmiah
+        // =========================
+        if (isset($rules['tooltip']) && is_array($rules['tooltip'])) {
+            foreach ($rules['tooltip'] as $rule) {
+                if (!isset($rule['pattern'], $rule['explanation'])) {
+                    continue;
+                }
+
+                $text = preg_replace_callback(
+                    '/' . $rule['pattern'] . '/i',
+                    function ($matches) use ($rule) {
+                        return '<span class="tooltip-word" data-tooltip="' 
+                            . htmlspecialchars($rule['explanation'], ENT_QUOTES, 'UTF-8') 
+                            . '">' 
+                            . $matches[0] 
+                            . '</span>';
+                    },
+                    $text
+                );
+            }
         }
 
         return $text;
     }
+
 
     
 
