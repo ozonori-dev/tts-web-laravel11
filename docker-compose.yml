@@ -1,11 +1,12 @@
-version: "3.9"
+version: '3.8'
 
 services:
   laravel-app:
     build: .
-    container_name: laravel-tts
+    container_name: laravel-app
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
-    restart: always
+      - .:/var/www
+    working_dir: /var/www
+    command: sh entrypoint.sh
