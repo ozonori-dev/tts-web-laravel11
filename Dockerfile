@@ -3,19 +3,19 @@ FROM php:8.4-cli
 WORKDIR /var/www
 
 # Install dependencies
-RUN apt-get update && apt-get install -y \
-    git \
-    unzip \
-    libzip-dev \
-    zip \
-    curl \
-    sqlite3 \
-    && docker-php-ext-install pdo pdo_sqlite zip \
-    && apt-get clean \
+RUN apt-get update \
+    && apt-get install -y \
+        git \
+        unzip \
+        curl \
+        zip \
+        sqlite3 \
+        libzip-dev \
+    && docker-php-ext-install zip pdo pdo_sqlite \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Copy project
 COPY . .
@@ -23,10 +23,10 @@ COPY . .
 # Install Laravel dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Set permission
+# Permission
 RUN chmod -R 775 storage bootstrap/cache
 
-# Copy entrypoint
+# Entrypoint
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
