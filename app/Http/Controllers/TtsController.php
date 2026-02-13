@@ -183,11 +183,6 @@ class TtsController extends Controller
 
     private function applyRegexReplacements(string $text): string
     {
-        \Log::info('Regex path check', [
-            'path' => $path,
-            'exists' => file_exists($path)
-        ]);
-
         $path = storage_path('app/regex_replacements.json');
 
         if (!file_exists($path)) {
