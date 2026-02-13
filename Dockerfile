@@ -1,35 +1,31 @@
-FROM php:8.4-cli
+# ===============================
+# PHP 8.4 + Laravel 11 Production
+# ===============================
 
-WORKDIR /var/www
+FROM php:8.4-cli
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    git \
-    unzip \
-    curl \
-    zip \
-    sqlite3 \
-    libsqlite3-dev \
-    libzip-dev \
-    pkg-config \
-    && docker-php-ext-install pdo_sqlite zip \
-    && rm -rf /var/lib/apt/lists/*
+    git unzip libzip-dev zip curl sqlite3 libsqlite3-dev \
+    && docker-php-ext-install pdo pdo_sqlite zip
 
 # Install Composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy project
+# Set working directory
+WORKDIR /var/www
+
+# Copy project files
 COPY . .
 
-# Install dependencies
+# Install Laravel dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Permissions
-RUN chmod -R 775 storage bootstrap/cache
+# Permission
+RUN chmod -R 777 storage bootstrap/cache
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
+# Expose port
 EXPOSE 8000
 
-ENTRYPOINT ["/entrypoint.sh"]
+# Start script
+CMD ["sh", "entrypoint.sh"]
