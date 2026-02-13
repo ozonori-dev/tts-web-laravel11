@@ -55,5 +55,10 @@
       "pattern": "\\bpersuasi\\b",
       "explanation": "kalimat yang bertujuan membujuk"
     }
+    {
+      "pattern": "\\babiotik\\b",
+      "explanation": "Komponen tak hidup dalam suatu ekosistem, seperti air, cahaya matahari, dan tanah."
+    }
+
   ]
 }
