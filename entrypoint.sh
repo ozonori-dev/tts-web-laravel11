@@ -2,37 +2,27 @@
 
 echo "🚀 Starting Laravel 11..."
 
-# Ensure .env exists
+# Copy .env if not exists
 if [ ! -f .env ]; then
-    echo "📄 Creating .env file..."
     cp .env.example .env
 fi
 
-# Ensure sqlite database exists
+# Create sqlite database
 if [ ! -f database/database.sqlite ]; then
-    echo "🗄 Creating SQLite database..."
-    mkdir -p database
     touch database/database.sqlite
 fi
 
-# Fix permissions
-chmod -R 775 storage bootstrap/cache
-chmod -R 777 database
+# Generate key if empty
+php artisan key:generate --force
 
-# Generate APP_KEY if empty
-if [ -z "$(grep ^APP_KEY= .env | cut -d '=' -f2)" ]; then
-    echo "🔑 Generating APP_KEY..."
-    php artisan key:generate --force
-fi
-
-# Clear config & cache
+# Clear cache
 php artisan config:clear
 php artisan cache:clear
 
 # Run migrations
 php artisan migrate --force
 
-# Create storage link
+# Storage link
 php artisan storage:link || true
 
 echo "✅ Laravel 11 ready!"
